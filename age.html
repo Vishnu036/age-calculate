@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Age Calcultor</title>
+   <style>
+    body {
+        background-image: url(bg1.jpg);
+        background-repeat: :no-repeat;
+        background-attachment:fixed;
+        background-size:100% 100%;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
+    button {
+        padding: 10px;
+        margin: 10px;
+        font-size: 1em;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+    <h1>Age Calculator</h1>
+    <p class="title">Date</p>
+    <input type="text" name="date" id="date" placeholder="dd" required="required" minlength="1" maxlength="2"/>
+    <p class="title">Month</p>
+    <input type="text" name="month" id="month" placeholder="mm" required="required" minlength="1" maxlength="2"/>
+    <p class="title">Year</p>
+    <input type="text" name="year" id="year" placeholder="yy" required="required" minlength="4" maxlength="4">
+    <br/>
+    <input type="button" name="submit" value="submit" onclick="age()"/>
+    <div id="result"></div>
+
+
+<script>
+    function age() {
+        var d1 = document.getElementById("date").value;
+        var m1 = document.getElementById("month").value;
+        var y1 = document.getElementById("year").value;
+        console.log("d1 is "+d1+" m1 is "+m1+" y1 "+y1);
+
+
+        var d=new Date();
+        var d2=d.getDate();
+        var m2=d.getMonth()+1;
+        var y2=d.getFullYear();
+        console.log("d2 is "+d2+" m2 is "+m2+" y2 "+y2);
+        console.log("date is \t"+d);
+
+        if (d1>d2){
+            d2=d2+30;
+            m2=m2-1;
+        }
+        if (m1>m2){
+            m2=m2+12;
+            y2=y2-1;
+        }
+        var d=d2-d1;
+        var m=m2-m1;
+        var y=y2-y1;
+    document.getElementById('result').innerHTML='your age' +y+ 'years' +m+ 'months' +d+ 'days';
+    }
+   
+
+</script>
+</body>
+</html>
