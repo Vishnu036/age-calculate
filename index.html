@@ -34,7 +34,7 @@
     <input type="text" name="year" id="year" placeholder="yy" required="required" minlength="4" maxlength="4">
     <br/>
     <input type="button" name="submit" value="submit" onclick="age()"/>
-    <div id="result"></div>
+    <p id="result" style="color:red;">Required Time</p>
 
 
 <script>
@@ -63,7 +63,9 @@
         var d=d2-d1;
         var m=m2-m1;
         var y=y2-y1;
-    document.getElementById('result').innerHTML='your age' +y+ 'years' +m+ 'months' +d+ 'days';
+        const resultElement = document.getElementById('result').innerHTML='your age ' +y+ 'years ' +m+ 'months ' +d+ 'days';
+        resultElement.innerHTML='your age' +y+ 'years' +m+ 'months' +d+ 'days';
+        resultElement.style.color = "red";
     }
    
 
